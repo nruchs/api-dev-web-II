@@ -1,13 +1,16 @@
-<h1 align="center"><p>PROGRAMAÇÃO WEB II - UNC</p> </h1>
+<h1 align="center"><p>DESENVOLVIMENTO WEB II - UNC</p> </h1>
 
-## INTERFACE 🔥
+<p align="center">
+API apresentada no curso de graduação de Engenharia de Software, na disciplina de Desenvolvimento Web II da 4ª fase, ministrada pelo professor Maximiliano Pezzin.
+</p>
+
 ![image](https://user-images.githubusercontent.com/88353503/204687011-ec9252bf-1da6-4c66-87f4-aaf703796611.png)
 
 
-## 📕 Sobre
+## 💻 Projeto
 
-#### API Desenvolvida para fins academico, visando o aprendizado em criação de API - Web Services. Consumindo a API é possível você ter acesso aos cadastro do Usuários, Empresas e Produtos. Também, permitindo fazer o FAMOSO CRUD 🧨
-
+Projeto com o objetivo de aprender sobre criação de API - Web Services.
+A API contempla cadastro de Usuários, Empresas e Produtos por meio do CRUD.
 
 ## 🕹 REQUISITOS PARA FUNCIONAR
 ### 🙍‍♂ Tabela USUARIO 
@@ -37,17 +40,16 @@
 <p>PUT:  http://localhost:3000/api/produto/ - Alterar um Produto em especifico</p>
 <p>DELETE:  http://localhost:3000/api/produto/ - Deletar um Produto em especifico</p>
 
+## 🚀 Tecnologias
 
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-## 🔨 Tecnologias
+- JavaScript
+- MySQL
+- Node.js
+- HTML/React
+- CSS
 
-- [JavaScript](https://#)
-- [Mysql](https://www.mysql.com/)
-- [Nodejs ](https://www.mysql.com/) 🔥
-- [HTML](https://reactnative.dev)
-- [CSS](https://#)
+---
 
-
-## 📜 License
-
-Este projeto está sob a licença do MIT. Veja o arquivo LICENÇA para maiores detalhes.
+Feito com ♥ by Natalia Ruchs
