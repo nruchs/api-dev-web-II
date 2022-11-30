@@ -1,352 +1,346 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Api - Programação Web II</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    --branco: #fff;
-    --azul: #374299;
-    --azul-hover: #1f1948;
-    --bg: #222;
-}
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        --branco: #fff;
+        --azul: #374299;
+        --azul-hover: #1f1948;
+        --bg: #222;
+      }
 
-body{
-    width: 100%;
-    height: 100vh;
-    background:var(--bg);
-    color: var(--branco);
-}
+      body {
+        width: 100%;
+        height: 100vh;
+        background: var(--bg);
+        color: var(--branco);
+      }
 
-h1 {
-    font-size: 32px;
-    text-align: center;
-    margin-top: 104px;
-}
+      h1 {
+        font-size: 32px;
+        text-align: center;
+        margin-top: 104px;
+      }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px 24px;
-}
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px 24px;
+      }
 
-.menu {
-    margin-top: 58px;
-}
-.menu ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
+      .menu {
+        margin-top: 58px;
+      }
+      .menu ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
 
-.menu ul li {
-    width: 285px;
-    font-weight: bold;
-    cursor: pointer;
-    background: var(--azul);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 2px;
-    transition: all .3s ease;
-}
+      .menu ul li {
+        width: 285px;
+        font-weight: bold;
+        cursor: pointer;
+        background: var(--azul);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
 
-.menu ul li a {
-    text-decoration: none;
-    color: var(--branco);
-    font-size: 16px;
-    padding: 8px 60px;
-}
+      .menu ul li a {
+        text-decoration: none;
+        color: var(--branco);
+        font-size: 16px;
+        padding: 8px 60px;
+      }
 
-.menu ul li.ativo {
-    background: var(--azul-hover);
-    transition: all .3s ease;
-}
-.menu ul li:hover {
-    background: var(--azul-hover);
-    transition: all .3s ease;
-}
+      .menu ul li.ativo {
+        background: var(--azul-hover);
+        transition: all 0.3s ease;
+      }
+      .menu ul li:hover {
+        background: var(--azul-hover);
+        transition: all 0.3s ease;
+      }
 
-.table-results {
-    width: 100%;
-}
+      .table-results {
+        width: 100%;
+      }
 
-.table-results thead {
-    background: var(--azul);
-}
+      .table-results thead {
+        background: var(--azul);
+      }
 
-.table-results thead th {
-    font-size: 14px;
-    padding: 8px 24px;
-}
+      .table-results thead th {
+        font-size: 14px;
+        padding: 8px 24px;
+      }
 
-.table-results tr td {
-    text-align: center;
-}
+      .table-results tr td {
+        text-align: center;
+      }
 
-.table-results tbody tr {
-    background: #2c2c2c;
-}
+      .table-results tbody tr {
+        background: #2c2c2c;
+      }
 
-.table-results tbody tr:hover, .table-results tbody tr:nth-child(even):hover {
-    background: var(--azul-hover);
-}
-.table-results tbody tr:nth-child(even) {
-    background: #404B48;
-}
+      .table-results tbody tr:hover,
+      .table-results tbody tr:nth-child(even):hover {
+        background: var(--azul-hover);
+      }
+      .table-results tbody tr:nth-child(even) {
+        background: #404b48;
+      }
     </style>
-</head>
-<body>
-    <h1>API  - PROGRAMAÇÃO WEB II</h1>
+  </head>
+  <body>
+    <h1>API - PROGRAMAÇÃO WEB II</h1>
     <div class="container">
-        <nav class="menu">
-            <ul>
-                <li data-user><a href="" >Usuários</a></li>
-                <li data-emp><a href="" >Empresas</a></li>
-                <li data-prod><a href="" >Produtos</a></li>
-                <li data-guide><a href="https://github.com/jdeymisson/api-programacao-web-II/blob/main/README.md" target="_blank">Como usar</a></li>
-            </ul>
-        </nav>
+      <nav class="menu">
+        <ul>
+          <li data-user><a href="">Usuários</a></li>
+          <li data-emp><a href="">Empresas</a></li>
+          <li data-prod><a href="">Produtos</a></li>
+          <li data-guide>
+            <a
+              href="https://github.com/jdeymisson/api-programacao-web-II/blob/main/README.md"
+              target="_blank"
+              >Como usar</a
+            >
+          </li>
+        </ul>
+      </nav>
     </div>
     <div class="container">
-        <table class="table-results">
-            <thead>
-            
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+      <table class="table-results">
+        <thead></thead>
+        <tbody></tbody>
+      </table>
     </div>
     <script>
-        const menuLinks = document.querySelectorAll('.menu li');
+      const menuLinks = document.querySelectorAll(".menu li");
 
-        function listUser(event) {
-            event.preventDefault();
+      function listUser(event) {
+        event.preventDefault();
+        menuLinks.forEach((item) => {
+          item.classList.remove("ativo");
+        });
 
-            menuLinks.forEach((item) => {
-                item.classList.remove('ativo');
-            });
-            const elementoMenu = event.currentTarget;
-            elementoMenu.classList.add('ativo');
+        const elementoMenu = event.currentTarget;
+        elementoMenu.classList.add("ativo");
 
-            const th_cd = document.createElement('th');
-            th_cd.innerText = 'cd_user';
-            const th_nome= document.createElement('th');
-            th_nome.innerText = 'nome_user';
-            const th_fone = document.createElement('th');
-            th_fone.innerText = 'fone_user';
-            const th_cpf = document.createElement('th');
-            th_cpf.innerText = 'cpf_user';
-            const th_uf = document.createElement('th');
-            th_uf.innerText = 'uf_user';
+        const th_cd = document.createElement("th");
+        th_cd.innerText = "cd_user";
+        const th_nome = document.createElement("th");
+        th_nome.innerText = "nome_user";
+        const th_fone = document.createElement("th");
+        th_fone.innerText = "fone_user";
+        const th_cpf = document.createElement("th");
+        th_cpf.innerText = "cpf_user";
+        const th_uf = document.createElement("th");
+        th_uf.innerText = "uf_user";
 
-            const thead = document.querySelector('thead');
-            const arrayTh = [th_cd, th_nome, th_fone, th_cpf, th_uf];
+        const thead = document.querySelector("thead");
+        const arrayTh = [th_cd, th_nome, th_fone, th_cpf, th_uf];
 
-            if(!thead.classList.contains('ativo')) {
+        if (!thead.classList.contains("ativo")) {
+          fetch("http://192.168.0.120:3000/api/usuarios")
+            .then((response) => response.json())
+            .then((corpo) => {
+              const corpoUser = corpo.result;
+              const tbody = document.querySelector("tbody");
 
-                fetch('http://192.168.0.120:3000/api/usuarios')
-                .then((response) => response.json()).then((corpo) => {
-                    const corpoUser = corpo.result;
-                    const tbody= document.querySelector('tbody');
+              for (const obj in corpoUser) {
+                const th_cd = document.createElement("th");
+                th_cd.innerHTML = JSON.stringify(corpoUser[obj].cd_user);
 
-                    for(const obj in corpoUser) {
-                            const th_cd = document.createElement('th');
-                            th_cd.innerHTML = JSON.stringify(corpoUser[obj].cd_user);
+                const tr = document.createElement("tr");
+                const td_cd = document.createElement("td");
+                td_cd.innerHTML = JSON.stringify(corpoUser[obj].cd_user);
 
+                const td_nome = document.createElement("td");
+                td_nome.innerHTML = JSON.stringify(corpoUser[obj].nome_user);
 
-                        
-                            const tr = document.createElement('tr');
-                            const td_cd = document.createElement('td');
-                            td_cd.innerHTML = JSON.stringify(corpoUser[obj].cd_user);
+                const td_fone = document.createElement("td");
+                td_fone.innerHTML = JSON.stringify(corpoUser[obj].fone_user);
 
-                            const td_nome = document.createElement('td');
-                            td_nome.innerHTML = JSON.stringify(corpoUser[obj].nome_user);
+                const td_cpf = document.createElement("td");
+                td_cpf.innerHTML = JSON.stringify(corpoUser[obj].cpf_user);
 
-                            const td_fone = document.createElement('td');
-                            td_fone.innerHTML = JSON.stringify(corpoUser[obj].fone_user);
+                const td_uf = document.createElement("td");
+                td_uf.innerHTML = JSON.stringify(corpoUser[obj].uf_user);
 
-                            const td_cpf = document.createElement('td');
-                            td_cpf.innerHTML = JSON.stringify(corpoUser[obj].cpf_user);
-
-                            const td_uf = document.createElement('td');
-                            td_uf.innerHTML = JSON.stringify(corpoUser[obj].uf_user);
-
-                            tbody.appendChild(tr);
-                            tr.appendChild(td_cd);
-                            tr.appendChild(td_nome);
-                            tr.appendChild(td_fone);
-                            tr.appendChild(td_cpf);
-                            tr.appendChild(td_uf);
-                    }
-                });
-
-                arrayTh.forEach((item) => {
-                    thead.appendChild(item);
-                    thead.classList.add('ativo');
-                })
-            }            
-       
-        }
-
-        const user = document.querySelector('[data-user]');
-        user.addEventListener('click', listUser);
-
-//Fetch em empresas
-
-    function listEmp(event) {
-            event.preventDefault();
-            menuLinks.forEach((item) => {
-                item.classList.remove('ativo');
+                tbody.appendChild(tr);
+                tr.appendChild(td_cd);
+                tr.appendChild(td_nome);
+                tr.appendChild(td_fone);
+                tr.appendChild(td_cpf);
+                tr.appendChild(td_uf);
+              }
             });
 
-            const elementoMenu = event.currentTarget;
-            elementoMenu.classList.add('ativo');
-
-            const th_cd = document.createElement('th');
-            th_cd.innerText = 'cd_emp';
-            const th_desc= document.createElement('th');
-            th_desc.innerText = 'desc_emp';
-            const th_fone = document.createElement('th');
-            th_fone.innerText = 'fone_emp';
-            const th_cnpj = document.createElement('th');
-            th_cnpj.innerText = 'cnpj_emp';
-            const th_dia = document.createElement('th');
-            th_dia.innerText = 'dia_emp';
-        
-
-            const thead = document.querySelector('thead');
-           
-            const arrayTh = [th_cd, th_desc, th_fone, th_cnpj, th_dia];
-
-            if(!thead.classList.contains('ativo')) {
-
-                fetch('http://192.168.0.120:3000/api/empresas')
-                .then((response) => response.json()).then((corpo) => {
-                    const corpoEmp = corpo.result;
-                    const tbody= document.querySelector('tbody');
-                    console.log(corpoEmp);
-
-                    for(const obj in corpoEmp) {
-
-                            const tr = document.createElement('tr');
-                            const td_cd = document.createElement('td');
-                            td_cd.innerHTML = JSON.stringify(corpoEmp[obj].cd_emp);
-
-                            const td_desc = document.createElement('td');
-                            td_desc.innerHTML = JSON.stringify(corpoEmp[obj].desc_emp);
-
-                            const td_fone = document.createElement('td');
-                            td_fone.innerHTML = JSON.stringify(corpoEmp[obj].fone_emp);
-
-                            const td_cnpj = document.createElement('td');
-                            td_cnpj.innerHTML = JSON.stringify(corpoEmp[obj].cnpj_emp);
-
-                            const td_dia = document.createElement('td');
-                            td_dia.innerHTML = JSON.stringify(corpoEmp[obj].dia_emp);
-
-                            tbody.appendChild(tr);
-                            tr.appendChild(td_cd);
-                            tr.appendChild(td_desc);
-                            tr.appendChild(td_fone);
-                            tr.appendChild(td_dia);
-                            tr.appendChild(td_cnpj);
-                    }
-                });
-
-                arrayTh.forEach((item) => {
-                    thead.appendChild(item);
-                    thead.classList.add('ativo');
-                })
-            }            
-       
+          arrayTh.forEach((item) => {
+            thead.appendChild(item);
+            thead.classList.add("ativo");
+          });
         }
+      }
 
-        const emp = document.querySelector('[data-emp]');
-        emp.addEventListener('click', listEmp);
+      const user = document.querySelector("[data-user]");
+      user.addEventListener("click", listUser);
 
-// Produtos
+      //Fetch em empresas
 
-function listProd(event) {
-            event.preventDefault();
-            menuLinks.forEach((item) => {
-                item.classList.remove('ativo');
+      function listEmp(event) {
+        event.preventDefault();
+        menuLinks.forEach((item) => {
+          item.classList.remove("ativo");
+        });
+
+        const elementoMenu = event.currentTarget;
+        elementoMenu.classList.add("ativo");
+
+        const th_cd = document.createElement("th");
+        th_cd.innerText = "cd_emp";
+        const th_desc = document.createElement("th");
+        th_desc.innerText = "desc_emp";
+        const th_fone = document.createElement("th");
+        th_fone.innerText = "fone_emp";
+        const th_cnpj = document.createElement("th");
+        th_cnpj.innerText = "cnpj_emp";
+        const th_dia = document.createElement("th");
+        th_dia.innerText = "dia_emp";
+
+        const thead = document.querySelector("thead");
+        const arrayTh = [th_cd, th_desc, th_fone, th_cnpj, th_dia];
+
+        if (!thead.classList.contains("ativo")) {
+          fetch("http://192.168.0.120:3000/api/empresas")
+            .then((response) => response.json())
+            .then((corpo) => {
+              const corpoEmp = corpo.result;
+              const tbody = document.querySelector("tbody");
+              console.log(corpoEmp);
+
+              for (const obj in corpoEmp) {
+                const tr = document.createElement("tr");
+                const td_cd = document.createElement("td");
+                td_cd.innerHTML = JSON.stringify(corpoEmp[obj].cd_emp);
+
+                const td_desc = document.createElement("td");
+                td_desc.innerHTML = JSON.stringify(corpoEmp[obj].desc_emp);
+
+                const td_fone = document.createElement("td");
+                td_fone.innerHTML = JSON.stringify(corpoEmp[obj].fone_emp);
+
+                const td_cnpj = document.createElement("td");
+                td_cnpj.innerHTML = JSON.stringify(corpoEmp[obj].cnpj_emp);
+
+                const td_dia = document.createElement("td");
+                td_dia.innerHTML = JSON.stringify(corpoEmp[obj].dia_emp);
+
+                tbody.appendChild(tr);
+                tr.appendChild(td_cd);
+                tr.appendChild(td_desc);
+                tr.appendChild(td_fone);
+                tr.appendChild(td_dia);
+                tr.appendChild(td_cnpj);
+              }
             });
 
-            const elementoMenu = event.currentTarget;
-            elementoMenu.classList.add('ativo');
-
-            const th_cd = document.createElement('th');
-            th_cd.innerText = 'cd_prod';
-            const th_desc= document.createElement('th');
-            th_desc.innerText = 'desc_prod';
-            const th_ncm = document.createElement('th');
-            th_ncm.innerText = 'NCM';
-            const th_dia = document.createElement('th');
-            th_dia.innerText = 'dia_prod';
-            const cpfCadastro= document.createElement('th');
-            cpfCadastro.innerText = 'cpfCadastro';
-        
-
-            const thead = document.querySelector('thead');
-           
-            const arrayTh = [th_cd, th_desc, th_ncm, th_dia, cpfCadastro];
-
-            if(!thead.classList.contains('ativo')) {
-
-                fetch('http://192.168.0.120:3000/api/produtos')
-                .then((response) => response.json()).then((corpo) => {
-                    const corpoProd = corpo.result;
-                    const tbody= document.querySelector('tbody');
-
-                    for(const obj in corpoProd) {
-
-                            const tr = document.createElement('tr');
-                            const td_cd = document.createElement('td');
-                            td_cd.innerHTML = JSON.stringify(corpoProd[obj].cd_prod);
-                           
-                            const td_desc = document.createElement('td');
-                            td_desc.innerHTML = JSON.stringify(corpoProd[obj].desc_prod);
-                         
-                            const td_ncm = document.createElement('td');
-                            td_ncm.innerHTML = JSON.stringify(corpoProd[obj].NCM);
-                            console.log(corpoProd[obj].NCM);
-
-                            const td_dia = document.createElement('td');
-                            td_dia.innerHTML = JSON.stringify(corpoProd[obj].dia_prod);
-
-                            const cpfCadastro = document.createElement('td');
-                            cpfCadastro.innerHTML = JSON.stringify(corpoProd[obj].cpfCadastro);
-
-                            tbody.appendChild(tr);
-                            tr.appendChild(td_cd);
-                            tr.appendChild(td_desc);
-                            tr.appendChild(td_ncm);
-                            tr.appendChild(td_dia);
-                            tr.appendChild(cpfCadastro);
-                    }
-                });
-
-                arrayTh.forEach((item) => {
-                    thead.appendChild(item);
-                    thead.classList.add('ativo');
-                })
-            }            
-       
+          arrayTh.forEach((item) => {
+            thead.appendChild(item);
+            thead.classList.add("ativo");
+          });
         }
+      }
 
-        const prod = document.querySelector('[data-prod]');
-        prod.addEventListener('click', listProd);
+      const emp = document.querySelector("[data-emp]");
+      emp.addEventListener("click", listEmp);
 
+      // Produtos
 
+      function listProd(event) {
+        event.preventDefault();
+        menuLinks.forEach((item) => {
+          item.classList.remove("ativo");
+        });
+
+        const elementoMenu = event.currentTarget;
+        elementoMenu.classList.add("ativo");
+
+        const th_cd = document.createElement("th");
+        th_cd.innerText = "cd_prod";
+        const th_desc = document.createElement("th");
+        th_desc.innerText = "desc_prod";
+        const th_ncm = document.createElement("th");
+        th_ncm.innerText = "NCM";
+        const th_dia = document.createElement("th");
+        th_dia.innerText = "dia_prod";
+        const cpfCadastro = document.createElement("th");
+        cpfCadastro.innerText = "cpfCadastro";
+
+        const thead = document.querySelector("thead");
+
+        const arrayTh = [th_cd, th_desc, th_ncm, th_dia, cpfCadastro];
+
+        if (!thead.classList.contains("ativo")) {
+          fetch("http://192.168.0.120:3000/api/produtos")
+            .then((response) => response.json())
+            .then((corpo) => {
+              const corpoProd = corpo.result;
+              const tbody = document.querySelector("tbody");
+
+              for (const obj in corpoProd) {
+                const tr = document.createElement("tr");
+                const td_cd = document.createElement("td");
+                td_cd.innerHTML = JSON.stringify(corpoProd[obj].cd_prod);
+
+                const td_desc = document.createElement("td");
+                td_desc.innerHTML = JSON.stringify(corpoProd[obj].desc_prod);
+
+                const td_ncm = document.createElement("td");
+                td_ncm.innerHTML = JSON.stringify(corpoProd[obj].NCM);
+                console.log(corpoProd[obj].NCM);
+
+                const td_dia = document.createElement("td");
+                td_dia.innerHTML = JSON.stringify(corpoProd[obj].dia_prod);
+
+                const cpfCadastro = document.createElement("td");
+                cpfCadastro.innerHTML = JSON.stringify(
+                  corpoProd[obj].cpfCadastro
+                );
+
+                tbody.appendChild(tr);
+                tr.appendChild(td_cd);
+                tr.appendChild(td_desc);
+                tr.appendChild(td_ncm);
+                tr.appendChild(td_dia);
+                tr.appendChild(cpfCadastro);
+              }
+            });
+
+          arrayTh.forEach((item) => {
+            thead.appendChild(item);
+            thead.classList.add("ativo");
+          });
+        }
+      }
+
+      const prod = document.querySelector("[data-prod]");
+      prod.addEventListener("click", listProd);
     </script>
-</body>
+  </body>
 </html>
