@@ -1,0 +1,571 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API - Desenvolvimento Web II - Natalia Ruchs",
+    "version": "1.0.0",
+    "description": "API apresentada no curso de graduação de Engenharia de Software da UnC, na disciplina de Desenvolvimento Web II da 4ª fase, ministrada pelo professor Maximiliano Pezzin.\n\nLinks:\n- [Github](https://github.com/nruchs)\n- [Repositório](https://github.com/nruchs/api-dev-web-II)",
+    "contact": {
+      "name": "Natalia Ruchs",
+      "url": "https://github.com/nruchs/api-dev-web-II"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api/"
+    }
+  ],
+  "paths": {
+    "/usuarios": {
+      "get": {
+        "tags": [
+          "Usuarios"
+        ],
+        "description": "Retorna os usuários cadastrados",
+        "responses": {
+          "200": {
+            "description": "Sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "cd_user": {
+                        "type": "integer"
+                      },
+                      "nome_user": {
+                        "type": "string"
+                      },
+                      "fone_user": {
+                        "type": "string"
+                      },
+                      "cpf_user": {
+                        "type": "string"
+                      },
+                      "uf_user": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/usuario": {
+      "post": {
+        "tags": [
+          "Usuarios"
+        ],
+        "description": "Cadastrar um usuário",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome_user": {
+                    "type": "string"
+                  },
+                  "fone_user": {
+                    "type": "string"
+                  },
+                  "cpf_user": {
+                    "type": "string"
+                  },
+                  "uf_user": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Usuário cadastrado com sucesso"
+          },
+          "400": {
+            "description": "Dados incorretos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/usuario/{cd_user}": {
+      "put": {
+        "tags": [
+          "Usuarios"
+        ],
+        "description": "Atualizar um usuário",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cd_user",
+            "schema": {
+              "type": "integer",
+              "format": "int"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome_user": {
+                    "type": "string"
+                  },
+                  "fone_user": {
+                    "type": "string"
+                  },
+                  "cpf_user": {
+                    "type": "string"
+                  },
+                  "uf_user": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Usuário atualizado com sucesso"
+          },
+          "400": {
+            "description": "Dados incorretos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Usuarios"
+        ],
+        "description": "Deleta um usuário",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cd_user",
+            "schema": {
+              "type": "integer",
+              "format": "int"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Usuário deletado"
+          }
+        }
+      }
+    },
+    "/empresas": {
+      "get": {
+        "tags": [
+          "Empresas"
+        ],
+        "description": "Retorna as Empresas cadastradas",
+        "responses": {
+          "200": {
+            "description": "Sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "cd_emp": {
+                        "type": "integer"
+                      },
+                      "nome_emp": {
+                        "type": "string"
+                      },
+                      "fone_emp": {
+                        "type": "string"
+                      },
+                      "cnpj_emp": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/empresa": {
+      "post": {
+        "tags": [
+          "Empresas"
+        ],
+        "description": "Cadastrar uma empresa",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome_emp": {
+                    "type": "string"
+                  },
+                  "fone_emp": {
+                    "type": "string"
+                  },
+                  "cnpj_emp": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Empresa cadastrada com sucesso"
+          },
+          "400": {
+            "description": "Dados incorretos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/empresa/{cd_emp}": {
+      "put": {
+        "tags": [
+          "Empresas"
+        ],
+        "description": "Atualizar uma empresa",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cd_emp",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome_emp": {
+                    "type": "string"
+                  },
+                  "fone_emp": {
+                    "type": "string"
+                  },
+                  "cnpj_emp": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Empresa atualizada com sucesso"
+          },
+          "400": {
+            "description": "Dados incorretos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Empresas"
+        ],
+        "description": "Deleta uma empresa",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cd_emp",
+            "schema": {
+              "type": "integer",
+              "format": "int"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Empresa deletada"
+          },
+          "400": {
+            "description": "Dados incorretos"
+          }
+        }
+      }
+    },
+    "/produtos": {
+      "get": {
+        "tags": [
+          "Produtos"
+        ],
+        "description": "Retorna os produtos cadastrados",
+        "responses": {
+          "200": {
+            "description": "Sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "cd_prod": {
+                        "type": "integer"
+                      },
+                      "nome_prod": {
+                        "type": "string"
+                      },
+                      "qntd_prod": {
+                        "type": "string"
+                      },
+                      "cat_prod": {
+                        "type": "string"
+                      },
+                      "val_prod": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/produto": {
+      "post": {
+        "tags": [
+          "Produtos"
+        ],
+        "description": "Cadastrar um produto",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome_prod": {
+                    "type": "string"
+                  },
+                  "qntd_prod": {
+                    "type": "string"
+                  },
+                  "cat_prod": {
+                    "type": "string"
+                  },
+                  "val_prod": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Produto cadastrado com sucesso"
+          },
+          "400": {
+            "description": "Dados incorretos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/produto/{cd_prod}": {
+      "put": {
+        "tags": [
+          "Produtos"
+        ],
+        "description": "Atualizar um produto",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cd_prod",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome_prod": {
+                    "type": "string"
+                  },
+                  "qntd_prod": {
+                    "type": "string"
+                  },
+                  "cat_prod": {
+                    "type": "string"
+                  },
+                  "val_prod": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Produto atualizado com sucesso"
+          },
+          "400": {
+            "description": "Dados incorretos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Produtos"
+        ],
+        "description": "Deleta um produto",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "cd_prod",
+            "schema": {
+              "type": "integer",
+              "format": "int"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Produto deletado"
+          },
+          "400": {
+            "description": "Dados incorretos"
+          }
+        }
+      }
+    }
+  }
+}
