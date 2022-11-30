@@ -277,18 +277,16 @@
 
         const th_cd = document.createElement("th");
         th_cd.innerText = "cd_prod";
-        const th_desc = document.createElement("th");
-        th_desc.innerText = "desc_prod";
-        const th_ncm = document.createElement("th");
-        th_ncm.innerText = "NCM";
-        const th_dia = document.createElement("th");
-        th_dia.innerText = "dia_prod";
-        const cpfCadastro = document.createElement("th");
-        cpfCadastro.innerText = "cpfCadastro";
+        const th_nome = document.createElement("th");
+        th_nome.innerText = "nome_prod";
+        const th_cat = document.createElement("th");
+        th_cat.innerText = "cat_prod";
+        const th_val = document.createElement("th");
+        th_val.innerText = "val_prod";
 
         const thead = document.querySelector("thead");
 
-        const arrayTh = [th_cd, th_desc, th_ncm, th_dia, cpfCadastro];
+        const arrayTh = [th_cd, th_nome, th_cat, th_val];
 
         if (!thead.classList.contains("ativo")) {
           fetch("http://192.168.0.120:3000/api/produtos")
@@ -302,26 +300,22 @@
                 const td_cd = document.createElement("td");
                 td_cd.innerHTML = JSON.stringify(corpoProd[obj].cd_prod);
 
-                const td_desc = document.createElement("td");
-                td_desc.innerHTML = JSON.stringify(corpoProd[obj].desc_prod);
+                const td_nome = document.createElement("td");
+                td_nome.innerHTML = JSON.stringify(corpoProd[obj].nome_prod);
 
-                const td_ncm = document.createElement("td");
-                td_ncm.innerHTML = JSON.stringify(corpoProd[obj].NCM);
+                const td_cat = document.createElement("td");
+                td_cat.innerHTML = JSON.stringify(corpoProd[obj].cat_prod);
 
-                const td_dia = document.createElement("td");
-                td_dia.innerHTML = JSON.stringify(corpoProd[obj].dia_prod);
-
-                const cpfCadastro = document.createElement("td");
-                cpfCadastro.innerHTML = JSON.stringify(
-                  corpoProd[obj].cpfCadastro
+                const td_val = document.createElement("td");
+                td_val.innerHTML = JSON.stringify(
+                  corpoProd[obj].val_prod
                 );
 
                 tbody.appendChild(tr);
                 tr.appendChild(td_cd);
-                tr.appendChild(td_desc);
-                tr.appendChild(td_ncm);
-                tr.appendChild(td_dia);
-                tr.appendChild(cpfCadastro);
+                tr.appendChild(td_nome);
+                tr.appendChild(td_cat);
+                tr.appendChild(td_val);
               }
             });
 

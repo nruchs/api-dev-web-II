@@ -24,11 +24,11 @@ module.exports = {
         });
     },
 
-    inserir: (desc_prod, qntd_prod, NCM, dia_prod, cpfCadastro) => {
+    inserir: (nome_prod, qntd_prod, cat_prod, val_prod) => {
         return new Promise((aceito, rejeitado) => {
             
-            db.query('INSERT INTO produtos (desc_prod, qntd_prod, NCM, dia_prod, cpfCadastro) VALUES (?, ?, ?, ?, ?)',
-                [desc_prod, qntd_prod, NCM, dia_prod, cpfCadastro],
+            db.query('INSERT INTO produtos (nome_prod, qntd_prod, cat_prod, val_prod) VALUES (?, ?, ?, ?)',
+                [nome_prod, qntd_prod, cat_prod, val_prod],
                 (error, results) => {
                     if(error) { rejeitado(error); return; }
                     aceito(results.insertCodigo);
@@ -36,11 +36,11 @@ module.exports = {
         });
     },
 
-    alterar: (cd_prod, desc_prod, qntd_prod, NCM, dia_prod, cpfCadastro) => {
+    alterar: (cd_prod, nome_prod, qntd_prod, cat_prod, val_prod) => {
         return new Promise((aceito, rejeitado) => {
             
-            db.query('UPDATE produtos SET desc_prod = ?, qntd_prod = ?, NCM = ?, dia_prod = ?, cpfCadastro = ? WHERE cd_prod = ?',
-                [desc_prod, qntd_prod, NCM, dia_prod, cpfCadastro, cd_prod],
+            db.query('UPDATE produtos SET nome_prod = ?, qntd_prod = ?, cat_prod = ?, val_prod = ? WHERE cd_prod = ?',
+                [nome_prod, qntd_prod, cat_prod, val_prod, cd_prod],
                 (error, results) => {
                     if(error) { rejeitado(error); return; }
                     aceito(results);

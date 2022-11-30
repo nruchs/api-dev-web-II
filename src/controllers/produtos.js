@@ -9,10 +9,10 @@ module.exports = {
         for(let i in produtos) {
             json.result.push({
                 cd_prod: produtos[i].cd_prod,
-                desc_prod: produtos[i].desc_prod,
-                NCM: produtos[i].NCM,
-                dia_prod: produtos[i].dia_prod,
-                cpfCadastro: produtos[i].cpfCadastro,
+                nome_prod: produtos[i].nome_prod,
+                qntd_prod: produtos[i].qntd_prod,
+                cat_prod: produtos[i].cat_prod,
+                val_prod: produtos[i].val_prod,
             });
         }
         res.json(json);
@@ -34,22 +34,20 @@ module.exports = {
     inserir: async(req, res) => {
         let json = {erros: '', result: {}};
         
-        let desc_prod = req.body.desc_prod;
+        let nome_prod = req.body.nome_prod;
         let qntd_prod = req.body.qntd_prod;
-        let NCM = req.body.NCM;
-        let dia_prod = req.body.dia_prod;
-        let cpfCadastro = req.body.cpfCadastro;
+        let cat_prod = req.body.cat_prod;
+        let val_prod = req.body.val_prod;
 
 
-        if(desc_prod && qntd_prod && NCM && dia_prod && cpfCadastro) {
-            let produtoCodigo = await produtoServices.inserir(desc_prod, qntd_prod, NCM, dia_prod, cpfCadastro);
+        if(nome_prod && qntd_prod && cat_prod && val_prod) {
+            let produtoCodigo = await produtoServices.inserir(nome_prod, qntd_prod, cat_prod, val_prod);
             json.result = {
                 cd_prod: produtoCodigo,
-                desc_prod,
+                nome_prod,
                 qntd_prod,
-                NCM,
-                dia_prod,
-                cpfCadastro
+                cat_prod,
+                val_prod
             };
 
         } else {
@@ -63,22 +61,20 @@ module.exports = {
         let json = {erros: '', result: {}};
         
         let cd_prod = req.params.cd_prod;
-        let desc_prod = req.body.desc_prod;
+        let nome_prod = req.body.nome_prod;
         let qntd_prod = req.body.qntd_prod;
-        let NCM = req.body.NCM;
-        let dia_prod = req.body.dia_prod;
-        let cpfCadastro = req.body.cpfCadastro;
+        let cat_prod = req.body.cat_prod;
+        let val_prod = req.body.val_prod;
 
 
-        if(cd_prod && desc_prod && qntd_prod & NCM && dia_prod && cpfCadastro) {
-            await produtoServices.alterar(cd_prod, desc_prod, qntd_prod, NCM, dia_prod, cpfCadastro);
+        if(cd_prod && nome_prod && qntd_prod && cat_prod && val_prod) {
+            await produtoServices.alterar(cd_prod, nome_prod, qntd_prod, cat_prod, val_prod);
             json.result = {
                 cd_prod,
-                desc_prod,
+                nome_prod,
                 qntd_prod,
-                NCM,
-                dia_prod,
-                cpfCadastro
+                cat_prod,
+                val_prod
             };
         } else {
             json.error = 'Campos não enviados';
