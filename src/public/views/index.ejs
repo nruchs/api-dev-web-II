@@ -13,8 +13,8 @@
     margin: 0;
     font-family: 'Poppins', sans-serif;
     --branco: #fff;
-    --verde: #11C18C;
-    --verde-hover: #03825C;
+    --azul: #374299;
+    --azul-hover: #1f1948;
     --bg: #222;
 }
 
@@ -51,7 +51,7 @@ h1 {
     width: 285px;
     font-weight: bold;
     cursor: pointer;
-    background: var(--verde);
+    background: var(--azul);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,11 +67,11 @@ h1 {
 }
 
 .menu ul li.ativo {
-    background: #03825C;
+    background: var(--azul-hover);
     transition: all .3s ease;
 }
 .menu ul li:hover {
-    background: #03825C;
+    background: var(--azul-hover);
     transition: all .3s ease;
 }
 
@@ -80,7 +80,7 @@ h1 {
 }
 
 .table-results thead {
-    background: var(--verde);
+    background: var(--azul);
 }
 
 .table-results thead th {
@@ -97,7 +97,7 @@ h1 {
 }
 
 .table-results tbody tr:hover, .table-results tbody tr:nth-child(even):hover {
-    background: rgba(17, 193, 140, .2);
+    background: var(--azul-hover);
 }
 .table-results tbody tr:nth-child(even) {
     background: #404B48;
