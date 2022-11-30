@@ -214,17 +214,15 @@
 
         const th_cd = document.createElement("th");
         th_cd.innerText = "cd_emp";
-        const th_desc = document.createElement("th");
-        th_desc.innerText = "desc_emp";
+        const th_nome = document.createElement("th");
+        th_nome.innerText = "nome_emp";
         const th_fone = document.createElement("th");
         th_fone.innerText = "fone_emp";
         const th_cnpj = document.createElement("th");
         th_cnpj.innerText = "cnpj_emp";
-        const th_dia = document.createElement("th");
-        th_dia.innerText = "dia_emp";
 
         const thead = document.querySelector("thead");
-        const arrayTh = [th_cd, th_desc, th_fone, th_cnpj, th_dia];
+        const arrayTh = [th_cd, th_nome, th_fone, th_cnpj];
 
         if (!thead.classList.contains("ativo")) {
           fetch("http://192.168.0.120:3000/api/empresas")
@@ -239,8 +237,8 @@
                 const td_cd = document.createElement("td");
                 td_cd.innerHTML = JSON.stringify(corpoEmp[obj].cd_emp);
 
-                const td_desc = document.createElement("td");
-                td_desc.innerHTML = JSON.stringify(corpoEmp[obj].desc_emp);
+                const td_nome = document.createElement("td");
+                td_nome.innerHTML = JSON.stringify(corpoEmp[obj].nome_emp);
 
                 const td_fone = document.createElement("td");
                 td_fone.innerHTML = JSON.stringify(corpoEmp[obj].fone_emp);
@@ -248,14 +246,10 @@
                 const td_cnpj = document.createElement("td");
                 td_cnpj.innerHTML = JSON.stringify(corpoEmp[obj].cnpj_emp);
 
-                const td_dia = document.createElement("td");
-                td_dia.innerHTML = JSON.stringify(corpoEmp[obj].dia_emp);
-
                 tbody.appendChild(tr);
                 tr.appendChild(td_cd);
-                tr.appendChild(td_desc);
+                tr.appendChild(td_nome);
                 tr.appendChild(td_fone);
-                tr.appendChild(td_dia);
                 tr.appendChild(td_cnpj);
               }
             });

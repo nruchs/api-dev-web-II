@@ -24,11 +24,11 @@ module.exports = {
         });
     },
 
-    inserir: (desc_emp, fone_emp, cnpj_emp, dia_emp) => {
+    inserir: (nome_emp, fone_emp, cnpj_emp) => {
         return new Promise((aceito, rejeitado) => {
             
-            db.query('INSERT INTO empresas (desc_emp, fone_emp, cnpj_emp, dia_emp) values (?, ?, ?, ?)',
-                [desc_emp, fone_emp, cnpj_emp, dia_emp],
+            db.query('INSERT INTO empresas (nome_emp, fone_emp, cnpj_emp) values (?, ?, ?)',
+                [nome_emp, fone_emp, cnpj_emp],
                 (error, results) => {
                     if(error) { rejeitado(error); return; }
                     aceito(results.insertCodigo);
@@ -37,11 +37,11 @@ module.exports = {
         });
     },
 
-    alterar: (cd_emp, desc_emp, fone_emp, cnpj_emp, dia_emp) => {
+    alterar: (cd_emp, nome_emp, fone_emp, cnpj_emp) => {
         return new Promise((aceito, rejeitado) => {
             
-            db.query('UPDATE empresas SET desc_emp = ?, fone_emp = ?, cnpj_emp = ?, dia_emp = ? WHERE cd_emp = ?',
-                [desc_emp, fone_emp, cnpj_emp, dia_emp, cd_emp],
+            db.query('UPDATE empresas SET nome_emp = ?, fone_emp = ?, cnpj_emp = ? WHERE cd_emp = ?',
+                [nome_emp, fone_emp, cnpj_emp, cd_emp],
                 (error, results) => {
                     if(error) { rejeitado(error); return; }
                     aceito(results);
