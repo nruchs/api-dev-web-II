@@ -95,4 +95,10 @@
 
 ---
 
+## Veja as tabelas pelo navegador
+
+- [Clique aqui](http://localhost:3000/api/front)
+
+---
+
 Feito com ♥ by Natalia Ruchs
