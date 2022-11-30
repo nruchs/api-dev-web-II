@@ -24,11 +24,11 @@ module.exports = {
         });
     },
 
-    inserir: (desc_user, fone_user, cpf_user, dia_user, cnpj_UEmp) => {
+    inserir: (nome_user, fone_user, cpf_user, uf_user) => {
         return new Promise((aceito, rejeitado) => {
             
-            db.query('INSERT INTO usuarios (desc_user, fone_user, cpf_user, dia_user, cnpj_UEmp) VALUES (?, ?, ?, ?, ?)',
-                [desc_user, fone_user, cpf_user, dia_user, cnpj_UEmp],
+            db.query('INSERT INTO usuarios (nome_user, fone_user, cpf_user, uf_user) VALUES (?, ?, ?, ?)',
+                [nome_user, fone_user, cpf_user, uf_user],
                 (error, results) => {
                     if(error) { rejeitado(error); return; }
                     aceito(results.insertCodigo);
@@ -36,11 +36,11 @@ module.exports = {
         });
     },
 
-    alterar: (cd_user, desc_user, fone_user, cpf_user, dia_user, cnpj_UEmp) => {
+    alterar: (cd_user, nome_user, fone_user, cpf_user, uf_user) => {
         return new Promise((aceito, rejeitado) => {
             
-            db.query('UPDATE usuarios SET desc_user = ?, fone_user = ?, cpf_user = ?, dia_user = ?, cnpj_UEmp = ? WHERE cd_user = ?',
-                [desc_user, fone_user, cpf_user, dia_user, cnpj_UEmp, cd_user],
+            db.query('UPDATE usuarios SET nome_user = ?, fone_user = ?, cpf_user = ?, uf_user = ? WHERE cd_user = ?',
+                [nome_user, fone_user, cpf_user, uf_user, cd_user],
                 (error, results) => {
                     if(error) { rejeitado(error); return; }
                     aceito(results.insertCodigo);

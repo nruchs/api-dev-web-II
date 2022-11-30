@@ -139,19 +139,17 @@ h1 {
 
             const th_cd = document.createElement('th');
             th_cd.innerText = 'cd_user';
-            const th_desc= document.createElement('th');
-            th_desc.innerText = 'desc_user';
+            const th_nome= document.createElement('th');
+            th_nome.innerText = 'nome_user';
             const th_fone = document.createElement('th');
             th_fone.innerText = 'fone_user';
             const th_cpf = document.createElement('th');
             th_cpf.innerText = 'cpf_user';
-            const th_dia = document.createElement('th');
-            th_dia.innerText = 'dia_user';
-            const th_cnpj = document.createElement('th');
-            th_cnpj.innerText = 'cnpj_UEmp';
+            const th_uf = document.createElement('th');
+            th_uf.innerText = 'uf_user';
 
             const thead = document.querySelector('thead');
-            const arrayTh = [th_cd, th_desc, th_fone, th_cpf, th_dia, th_cnpj];
+            const arrayTh = [th_cd, th_nome, th_fone, th_cpf, th_uf];
 
             if(!thead.classList.contains('ativo')) {
 
@@ -170,8 +168,8 @@ h1 {
                             const td_cd = document.createElement('td');
                             td_cd.innerHTML = JSON.stringify(corpoUser[obj].cd_user);
 
-                            const td_desc = document.createElement('td');
-                            td_desc.innerHTML = JSON.stringify(corpoUser[obj].desc_user);
+                            const td_nome = document.createElement('td');
+                            td_nome.innerHTML = JSON.stringify(corpoUser[obj].nome_user);
 
                             const td_fone = document.createElement('td');
                             td_fone.innerHTML = JSON.stringify(corpoUser[obj].fone_user);
@@ -179,19 +177,15 @@ h1 {
                             const td_cpf = document.createElement('td');
                             td_cpf.innerHTML = JSON.stringify(corpoUser[obj].cpf_user);
 
-                            const td_dia = document.createElement('td');
-                            td_dia.innerHTML = JSON.stringify(corpoUser[obj].dia_user);
-
-                            const td_cnpj = document.createElement('td');
-                            td_cnpj.innerHTML = JSON.stringify(corpoUser[obj].cnpj_UEmp);
+                            const td_uf = document.createElement('td');
+                            td_uf.innerHTML = JSON.stringify(corpoUser[obj].uf_user);
 
                             tbody.appendChild(tr);
                             tr.appendChild(td_cd);
-                            tr.appendChild(td_desc);
+                            tr.appendChild(td_nome);
                             tr.appendChild(td_fone);
                             tr.appendChild(td_cpf);
-                            tr.appendChild(td_dia);
-                            tr.appendChild(td_cnpj);
+                            tr.appendChild(td_uf);
                     }
                 });
 

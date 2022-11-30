@@ -9,11 +9,10 @@ module.exports = {
         for(let i in usuarios) {
             json.result.push({
                 cd_user: usuarios[i].cd_user,
-                desc_user: usuarios[i].desc_user,
+                nome_user: usuarios[i].nome_user,
                 fone_user: usuarios[i].fone_user,
                 cpf_user: usuarios[i].cpf_user,
-                dia_user: usuarios[i].dia_user,
-                cnpj_UEmp: usuarios[i].cnpj_UEmp
+                uf_user: usuarios[i].uf_user
             });
         }
         res.json(json);
@@ -35,22 +34,20 @@ module.exports = {
     inserir: async(req, res) => {
         let json = {erros: '', result: {}};
         
-        let desc_user = req.body.desc_user;
+        let nome_user = req.body.nome_user;
         let fone_user = req.body.fone_user;
         let cpf_user = req.body.cpf_user;
-        let dia_user = req.body.dia_user;
-        let cnpj_UEmp = req.body.cnpj_UEmp;
+        let uf_user = req.body.uf_user;
 
 
-        if(desc_user && fone_user && cpf_user && dia_user && cnpj_UEmp) {
-            let userCodigo = await usuarioServices.inserir(desc_user, fone_user, cpf_user, dia_user, cnpj_UEmp);
+        if(nome_user && fone_user && cpf_user && uf_user) {
+            let userCodigo = await usuarioServices.inserir(nome_user, fone_user, cpf_user, uf_user);
             json.result = {
                 cd_prod: userCodigo,
-                desc_user,
+                nome_user,
                 fone_user,
                 cpf_user,
-                dia_user,
-                cnpj_UEmp
+                uf_user
             };
 
         } else {
@@ -64,22 +61,20 @@ module.exports = {
         let json = {erros: '', result: {}};
         
         let cd_user = req.params.cd_user;
-        let desc_user = req.body.desc_user;
+        let nome_user = req.body.nome_user;
         let fone_user = req.body.fone_user;
         let cpf_user = req.body.cpf_user;
-        let dia_user = req.body.dia_user;
-        let cnpj_UEmp = req.body.cnpj_UEmp;
+        let uf_user = req.body.uf_user;
 
 
-        if(cd_user && desc_user && fone_user && cpf_user && dia_user && cnpj_UEmp) {
-            await usuarioServices.alterar(cd_user, desc_user, fone_user, cpf_user, dia_user, cnpj_UEmp);
+        if(cd_user && nome_user && fone_user && cpf_user && uf_user) {
+            await usuarioServices.alterar(cd_user, nome_user, fone_user, cpf_user, uf_user);
             json.result = {
                 cd_user,
-                desc_user,
+                nome_user,
                 fone_user,
                 cpf_user,
-                dia_user,
-                cnpj_UEmp
+                uf_user
             };
 
         } else {
