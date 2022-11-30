@@ -1,7 +1,7 @@
 <h1 align="center"><p>PROGRAMAÇÃO WEB II - UNC</p> </h1>
 
 ## INTERFACE 🔥
-![image](https://user-images.githubusercontent.com/68932001/142342704-ed74ad3f-0bd0-4e57-acb2-54b5e842c180.png)
+![image](https://user-images.githubusercontent.com/88353503/204687011-ec9252bf-1da6-4c66-87f4-aaf703796611.png)
 
 
 ## 📕 Sobre
