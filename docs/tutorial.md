@@ -14,6 +14,14 @@
 
 <p>GET:  http://localhost:3000/api/usuarios - Retorna todos os usuários cadastrados</p>
 <p>POST:  http://localhost:3000/api/usuario/ - Adiciona um novo usuário</p>
+```json
+{
+  "nome_user": "João",
+  "fone_user": "12-3456-7890",
+  "cpf_user": "09876543210",
+  "uf_user": "SC"
+}
+```
 <p>PUT:  http://localhost:3000/api/usuario/{cd_user} - Altera um usuário em especifico</p>
 <p>DELETE:  http://localhost:3000/api/usuario/{cd_user} - Deleta um usuário em especifico</p>
 
