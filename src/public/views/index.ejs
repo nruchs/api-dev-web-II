@@ -115,7 +115,7 @@
           <li data-prod><a href="">Produtos</a></li>
           <li data-guide>
             <a
-              href="https://github.com/nruchs/api-dev-web-II/blob/main/docs/tutorial.md"
+              href="http://localhost:3000/api/documentacao"
               target="_blank"
               >Documentação</a
             >
@@ -156,7 +156,7 @@
         const arrayTh = [th_cd, th_nome, th_fone, th_cpf, th_uf];
 
         if (!thead.classList.contains("ativo")) {
-          fetch("http://192.168.0.120:3000/api/usuarios")
+          fetch("http://10.0.3.75:3000/api/usuarios")
             .then((response) => response.json())
             .then((corpo) => {
               const corpoUser = corpo.result;
@@ -225,7 +225,7 @@
         const arrayTh = [th_cd, th_nome, th_fone, th_cnpj];
 
         if (!thead.classList.contains("ativo")) {
-          fetch("http://192.168.0.120:3000/api/empresas")
+          fetch("http://10.0.3.75:3000/api/empresas")
             .then((response) => response.json())
             .then((corpo) => {
               const corpoEmp = corpo.result;
@@ -289,7 +289,7 @@
         const arrayTh = [th_cd, th_nome, th_cat, th_val];
 
         if (!thead.classList.contains("ativo")) {
-          fetch("http://192.168.0.120:3000/api/produtos")
+          fetch("http://10.0.3.75:3000/api/produtos")
             .then((response) => response.json())
             .then((corpo) => {
               const corpoProd = corpo.result;

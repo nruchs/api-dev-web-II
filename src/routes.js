@@ -29,4 +29,8 @@ router.get('/front', (req, res) => {
     return res.render('index');
 })
 
+router.get('/documentacao', (req, res) => {
+    return res.render('api-uso');
+})
+
 module.exports = router;
